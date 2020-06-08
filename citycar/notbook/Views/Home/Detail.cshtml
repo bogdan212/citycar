@@ -1,0 +1,45 @@
+﻿@model notbook.Models.Order
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Подробности о заказе</h1>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.City1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.City1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.City2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.City2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sizecar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sizecar)
+        </dd>
+
+
+
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

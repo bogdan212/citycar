@@ -1,0 +1,49 @@
+﻿@model notbook.Models.Order
+    
+@{
+ViewData["Title"] = "Create";
+}
+
+<h1>Создать заказ</h1>
+
+@using (Html.BeginForm())
+{
+    <dt class="col-sm-2">
+        @Html.LabelFor(model => model.Secondname, "фамилия ")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.Secondname)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(model => model.Firstname, "имя")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.Firstname)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(model => model.Birthday, "дата выезда")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.Birthday)
+    </dd>
+   <dt class="col-sm-2">
+            @Html.LabelFor(model => model.City1, "город выезда")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.City1)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(model => model.City2, "город прибытия")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.City2)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(model => model.sizecar, "размр автомобиля")
+    </dt>
+    <dd class="col-sm-10">
+        @Html.EditorFor(model => model.sizecar)
+    </dd>
+    <br />
+    <input  class="form-control form-control-lg"  placeholder=".form-control-lg"type="submit" value="Добавить" />
+    }

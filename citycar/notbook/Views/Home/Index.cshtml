@@ -1,0 +1,52 @@
+﻿@model IEnumerable<notbook.Models.Order>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<form class="form-inline" asp-action="Search" method="get">
+    <input class="form-control mr-sm-2" type="search" name="searchText" placeholder="Введите строку">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Узнать  о водителе</th>
+            <th scope="col">Фамилия </th>
+            <th scope="col">Имя</th>
+            <th scope="col">Дата выезда</th>
+            <th scope="col">кол-во свободных мест</th>
+            <th scope="col">Редактировать заказ</th>
+            <th scope="col">Подробнее о заказе</th>
+        </tr>
+    </thead>
+    @foreach (var p in Model)
+    {
+        <tr scope="row">
+
+            <td><a class="navbar-brand" href="~/Home/Statss/@p.Id"> + </a></td>
+
+            <td>@p.Firstname</td>
+
+            <td>@p.Secondname</td>
+
+            <td>@p.Birthday</td>
+
+            <td>@p.sizecar</td>
+
+            <td><a class="navbar-brand" href="~/Home/Editing/@p.Id">+</a></td>
+
+            <td><a class="navbar-brand"  href="~/Home/Detail/@p.Id">+</a></td>
+
+
+
+        </tr>
+    }
+</table>
+<div>
+    <a asp-action="Create">Добавить заказ</a>
+</div>
