@@ -12,9 +12,16 @@ namespace notbook.Models
             statuss = 1;
             sizecar = 1;
             about = "ввод ";
+
+           
+           Contacts = new List<Contact>();
+            
+
+
+
         }
 
-        
+
         public string Firstname { get; set; }
 
         public string Secondname { get; set; }

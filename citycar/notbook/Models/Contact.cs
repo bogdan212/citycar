@@ -2,6 +2,8 @@
 {
     public class Contact : BaseEntity
     {
+    
+
         public string Value { get; set; }
 
         public int OrderId { get; set; }
@@ -10,8 +12,8 @@
 
         
 
-        public int ContactTypeId { get; set; }
+       // public int ContactTypeId { get; set; }
 
-        public virtual ContactType ContactType { get; set; }
+        //public virtual ContactType ContactType { get; set; }
     }
 }

@@ -47,13 +47,17 @@
             @Html.EditorFor(m => m.statuss)
         </p>
         <p>
-           
 
-            @Html.LabelFor(m => m.about, "Оценка водителя")
+
+            @Html.LabelFor(m => m.about, "Характеристика")
             <br />
             @Html.EditorFor(m => m.about)
         </p>
-        <p><input class="form-control form-control-lg"  placeholder=".form-control-lg" type="submit" value="Отправить" /></p>
+        <p>
+        <td><a class="navbar-brand" href="~/Contacts/Index">Отзывы</a></td>
+
+        </p>
+        <p><input class="form-control form-control-lg" placeholder=".form-control-lg" type="submit" value="Отправить" /></p>
     </fieldset>
         }
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using notbook.Models;
 
 namespace notbook.Models
 {
@@ -11,7 +12,7 @@ namespace notbook.Models
     {
         public DbSet<Order> People { get; set; }
 
-        public DbSet<ContactType> ContactTypes { get; set; }
+        //public DbSet<ContactType> ContactTypes { get; set; }
 
         
 
@@ -25,5 +26,6 @@ namespace notbook.Models
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies();
         }
+        public DbSet<notbook.Models.Contact> Contact { get; set; }
     }
 }
