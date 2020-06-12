@@ -14,12 +14,13 @@ namespace notbook.Models
             about = "ввод ";
 
            
-           Contacts = new List<Contact>();
+           //Contacts = new List<Contact>();
             
 
 
 
         }
+        private List<Contact> contacts = new List<Contact>();
 
 
         public string Firstname { get; set; }
@@ -40,7 +41,7 @@ namespace notbook.Models
 
         //public int UserId { get; set; }
 
-        public virtual List<Contact> Contacts { get; set; }
+        public virtual List<Contact> Contacts { get => contacts; }
 
 
     }

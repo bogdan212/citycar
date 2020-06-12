@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<notbook.Models.Order>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "";
 }
 
-
+    <style>
+        body {
+            background: #FFFFE0; /* Цвет фона */
+            color: #000000; /* Цвет текста */
+        }
+    </style>
 
 
 <form class="form-inline" asp-action="Search" method="get">
@@ -15,18 +20,22 @@
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">Номер заказа</th>
             <th scope="col">Узнать  о водителе</th>
-            <th scope="col">Фамилия </th>
             <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
             <th scope="col">Дата выезда</th>
             <th scope="col">кол-во свободных мест</th>
             <th scope="col">Редактировать заказ</th>
             <th scope="col">Подробнее о заказе</th>
+
         </tr>
     </thead>
     @foreach (var p in Model)
     {
         <tr scope="row">
+
+            <td>@p.Id</td>
 
             <td><a class="navbar-brand" href="~/Home/Statss/@p.Id"> + </a></td>
 
@@ -40,13 +49,16 @@
 
             <td><a class="navbar-brand" href="~/Home/Editing/@p.Id">+</a></td>
 
-            <td><a class="navbar-brand"  href="~/Home/Detail/@p.Id">+</a></td>
+            <td><a class="navbar-brand" href="~/Home/Detail/@p.Id">+</a></td>
+
+           
 
 
 
         </tr>
     }
 </table>
+<td><a class="navbar-brand" href="~/Contacts/Index/@Model">Создать отзыв</a></td>
 <div>
     <a asp-action="Create">Добавить заказ</a>
 </div>

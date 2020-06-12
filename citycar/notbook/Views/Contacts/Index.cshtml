@@ -5,7 +5,12 @@
 }
 
 <!DOCTYPE html>
-
+<style>
+    body {
+        background: #FFFFE0; /* Цвет фона */
+        color: #000000; /* Цвет текста */
+    }
+</style>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -21,33 +26,39 @@
             <th>
                 @Html.DisplayNameFor(model => model.Value)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order)
-            </th>
+            
+            <th scope="col">Номер заказа</th>
+            
 
             </th>
             <th></th>
         </tr>
     </thead>
+    
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr scope="row">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Value)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Order.Id)
-                </td>
+       
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
+            @foreach (var item in Model)
+            {
+                <tr scope="row">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Value)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Order.Id)
+                    </td>
+                 
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        
     </tbody>
+
+
     <td><a class="navbar-brand" href="~/Home/Index">Назад</a></td>
 </table>
 </body>

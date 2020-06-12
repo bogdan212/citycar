@@ -5,7 +5,12 @@
 }
 
 <h1>Отзыв о водителе</h1>
-
+<style>
+    body {
+        background: #FAFAD2; /* Цвет фона */
+        color: #000000; /* Цвет текста */
+    }
+</style>
 
 <div>
     <h4></h4>
@@ -32,34 +37,57 @@
 
         @using (Html.BeginForm("EditBook", "Home", FormMethod.Post))
         {
-    <fieldset>
-        @Html.HiddenFor(m => m.Id)
-        @Html.HiddenFor(m => m.Firstname)
-        @Html.HiddenFor(m => m.Secondname)
-        @Html.HiddenFor(m => m.Birthday)
-        @Html.HiddenFor(m => m.sizecar)
-        @Html.HiddenFor(m => m.City1)
-        @Html.HiddenFor(m => m.City2)
-        <p>
+            <fieldset>
+                @Html.HiddenFor(m => m.Id)
+                @Html.HiddenFor(m => m.Firstname)
+                @Html.HiddenFor(m => m.Secondname)
+                @Html.HiddenFor(m => m.Birthday)
+                @Html.HiddenFor(m => m.sizecar)
+                @Html.HiddenFor(m => m.City1)
+                @Html.HiddenFor(m => m.City2)
+                <p>
 
-            @Html.LabelFor(m => m.statuss, "Оценка водителя")
-            <br />
-            @Html.EditorFor(m => m.statuss)
-        </p>
-        <p>
+                    @Html.LabelFor(m => m.statuss, "Оценка водителя")
+                    <br />
+                    @Html.EditorFor(m => m.statuss)
+                </p>
+                <p>
 
 
-            @Html.LabelFor(m => m.about, "Характеристика")
-            <br />
-            @Html.EditorFor(m => m.about)
-        </p>
-        <p>
-        <td><a class="navbar-brand" href="~/Contacts/Index">Отзывы</a></td>
+                    @Html.LabelFor(m => m.about, "Характеристика")
+                    <br />
+                    @Html.EditorFor(m => m.about)
+                </p>
+                <p>
+                    <td><a class="navbar-brand" href="~/Contacts/Index/@Model.Id">Отзывы</a></td>
 
-        </p>
-        <p><input class="form-control form-control-lg" placeholder=".form-control-lg" type="submit" value="Отправить" /></p>
-    </fieldset>
+                </p>
+                <p><input class="form-control form-control-lg" placeholder=".form-control-lg" type="submit" value="Отправить" /></p>
+            </fieldset>
         }
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Отзыв</th>
+                    <th scope="col">Номер заказа</th>
+
+
+                </tr>
+                @foreach (Contact contact in Model.Contacts)
+                {
+                    <tr scope="row">
+                        <td>
+                            @Html.DisplayFor(modelItem => contact.Value)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => contact.Order.Id)
+                        </td>
+
+                    </tr>
+                }
+            </thead>
+        </table>
 
 
     </dl>
